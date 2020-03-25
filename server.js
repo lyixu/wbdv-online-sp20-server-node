@@ -1,5 +1,12 @@
+var bodyParser = require('body-parser')
 var express = require('express')
 var app = express()
+
+// const mongoose = require('mongoose')
+// mongoose.connect('mongodb://localhost:27017/whiteboard-cs5610o-sp20', { useNewUrlParser: true, useUnifiedTopology: true })
+
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
 app.use(function (req,res, next) {
     res.header('Access-Control-Allow-Origin', '*');
