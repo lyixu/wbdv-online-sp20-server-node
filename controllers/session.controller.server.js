@@ -61,8 +61,8 @@ module.exports = (app) => {
     app.get('/api/session/reset',
         resetSession);
 
-    app.post('/api/login', login)
     app.post('/api/register', register)
+    app.post('/api/login', login)
     app.post('/api/currentUser', currentUser)
     app.post('/api/logout', logout)
 
