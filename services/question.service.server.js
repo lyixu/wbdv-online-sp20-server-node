@@ -4,7 +4,7 @@ let questions = [
         question: "Do you like the beach?",
         correct: "TRUE"
     },
-    {_id: "234", titl   e: "Question 2", quizId: "234", type: "MULTIPLE_CHOICE",
+    {_id: "234", title: "Question 2", quizId: "234", type: "MULTIPLE_CHOICE",
         question: "What is your favorite color?",
         correct: "Blue",
         options: [
