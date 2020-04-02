@@ -29,13 +29,10 @@ app.use(session({
 }));
 
 require('./controllers/session.controller.server')(app)
-
-const quizController = require('./controllers/quiz.controller.server')
-quizController(app)
-
+require('./controllers/quiz.controller.server')(app)
 require('./controllers/question.controller.server')(app)
-
 require('./controllers/users.controller.server')(app)
+require('./controllers/quiz-attempts.controller.server')(app)
 
 // client --> req 'http://myapp/' --> server
 // client <-- res 'hello world'   <-- server
