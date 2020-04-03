@@ -27,6 +27,7 @@ module.exports = (app) => {
             .then(user => {
                 if(user) {
                     req.session['currentUser'] = user
+                    console.log("log session:", req.session);
                     res.send(user)
                 } else {
                     res.sendStatus(403)
@@ -44,6 +45,7 @@ module.exports = (app) => {
     }
 
     currentUser = (req, res) => {
+        console.log("currentUser session:", req.session);
         res.json(req.session["currentUser"])
     }
 
