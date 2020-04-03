@@ -16,7 +16,7 @@ app.use(bodyParser.json())
 
 let allowOrigins = 'http://localhost:4200'
 if(process.env.PORT){
-   allowOrigins = 'https://wbdv-online-sp20-jannunzi-clie.herokuapp.com'
+   allowOrigins = 'http://wbdv-online-sp20-jannunzi-clie.herokuapp.com'
 }
 app.use(function (req,res, next) {
     res.header('Access-Control-Allow-Origin',
