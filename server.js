@@ -14,9 +14,13 @@ mongoose.connect(connectionString,
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
+let allowOrigins = 'http://localhost:4200'
+if(process.env.PORT){
+   allowOrigins = 'https://wbdv-online-sp20-jannunzi-clie.herokuapp.com'
+}
 app.use(function (req,res, next) {
     res.header('Access-Control-Allow-Origin',
-        'http://localhost:4200');
+        allowOrigins);
     res.header('Access-Control-Allow-Headers',
         'Content-Type, X-Requested-With, Origin');
     res.header('Access-Control-Allow-Methods',
