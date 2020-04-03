@@ -3,7 +3,12 @@ var express = require('express')
 var app = express()
 
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost:27017/whiteboard-cs5610o-sp20',
+let connectionString = 'mongodb://localhost:27017/whiteboard-cs5610o-sp20';
+if(process.env.MONGODB_URI) {
+    connectionString = process.env.MONGODB_URI
+  }
+console.log('connectionString:', connectionString);
+mongoose.connect(, connectionString
 { useNewUrlParser: true, useUnifiedTopology: true })
 
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -40,5 +45,5 @@ app.get('/', function (req, res) {
     res.send('hello world')
 })
 
-app.listen(3000)
+app.listen(process.env.PORT || 3000)
 
