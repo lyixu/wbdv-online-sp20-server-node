@@ -8,7 +8,7 @@ if(process.env.MONGODB_URI) {
     connectionString = process.env.MONGODB_URI
   }
 console.log('connectionString:', connectionString);
-mongoose.connect(, connectionString
+mongoose.connect(connectionString,
 { useNewUrlParser: true, useUnifiedTopology: true })
 
 app.use(bodyParser.urlencoded({ extended: false }))
